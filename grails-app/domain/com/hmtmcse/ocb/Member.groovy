@@ -22,6 +22,8 @@ class Member {
         lastName(nullable: true)
         identityHash(nullable: true)
         identityHashLastUpdate(nullable: true)
+        dataCreated(nullable: true)
+        lastUpdated(nullable: true)
     }
 
 
