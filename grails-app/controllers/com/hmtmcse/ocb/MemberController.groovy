@@ -1,14 +1,12 @@
 package com.hmtmcse.ocb
 
-import com.hmtmcs.ocb.MemberService
-
 class MemberController {
 
     MemberService memberService
 
     def index() {
         def response = memberService.list(params)
-        [member: response.list, total:response.count]
+        [memberList: response.list, total:response.count]
     }
 
     def details(Integer id) {

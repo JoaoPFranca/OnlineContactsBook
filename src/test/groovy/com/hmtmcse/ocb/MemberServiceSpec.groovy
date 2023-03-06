@@ -1,4 +1,4 @@
-package com.hmtmcs.ocb
+package com.hmtmcse.ocb
 
 import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification

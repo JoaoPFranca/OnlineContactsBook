@@ -1,4 +1,4 @@
-package com.hmtmcs.ocb
+package com.hmtmcse.ocb
 
 import com.hmtmcse.ocb.Member
 import grails.web.servlet.mvc.GrailsParameterMap
@@ -47,7 +47,7 @@ class MemberService {
                 order("id", "desc")
             }
         }
-        return [list: memberList, count: memberList.size()]
+        return [list: memberList, count: Member.count()]
     }
 
 
