@@ -9,4 +9,5 @@
 //= require bootstrap
 //= require popper.min
 // = require ocb
+// = require ocb.message.box
 //= require_self
