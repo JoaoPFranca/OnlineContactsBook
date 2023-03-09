@@ -12,7 +12,7 @@ class AppUtil {
         return WebUtils.retrieveGrailsWebRequest().session
     }
 
-    static infoMessage (String message, boolean status = true) {
+    static infoMessage(String message, boolean status = true) {
         return [info: message, success: status]
     }
 
