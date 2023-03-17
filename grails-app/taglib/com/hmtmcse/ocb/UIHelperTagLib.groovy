@@ -2,8 +2,8 @@ package com.hmtmcse.ocb
 
 class UIHelperTagLib {
     static namespace = "UIHelper"
-    //static encodeAsForTags = [tagName: [taglib:'html'], otherTagName: [taglib:'none']]
 
+    AuthenticationService authenticationService
 
     def renderErrorMessage = { attrs, body ->
         def model = attrs.model
@@ -13,4 +13,32 @@ class UIHelperTagLib {
             out << "<small class='form-text text-danger''><strong>${errorMessage}</strong></small>"
         }
     }
+
+
+    def memberActionMenu = { attrs, body ->
+        out << '<li class="nav-item dropdown show">'
+        out << g.link(class:"nav-link dropdown-toggle", "data-toggle":"dropdown"){authenticationService.getMemberName()}
+        out << '<div class="dropdown-menu">'
+        out << g.link(controller: "authentication", action: "logout", class: "dropdown-item"){g.message(code:"logout")}
+        out << "</div></li>"
+    }
+
+    def leftNavigation = { attrs, body ->
+        List navigations = [
+                [controller: "dashboard", action: "index", name: "dashboard"],
+                [controller: "contactGroup", action: "index", name: "contact.group"],
+                [controller: "contact", action: "index", name: "contact"],
+        ]
+
+        if(authenticationService.isAdministratorMember()){
+            navigations.add([controller: "member", action: "index", name: "member"])
+        }
+
+        navigations.each { menu ->
+            out << '<li class="list-group-item">'
+            out << g.link(controller: menu.controller, action: menu.action) { g.message(code: menu.name, args: ['']) }
+            out << '</li>'
+        }
+    }
+
 }
