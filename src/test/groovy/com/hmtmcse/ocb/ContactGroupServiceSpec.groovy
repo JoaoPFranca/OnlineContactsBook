@@ -1,9 +1,9 @@
-package onlinecontactsbook
+package com.hmtmcse.ocb
 
-import grails.testing.gorm.DomainUnitTest
+import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
-class ContactGroupSpec extends Specification implements DomainUnitTest<ContactGroup> {
+class ContactGroupServiceSpec extends Specification implements ServiceUnitTest<ContactGroupService>{
 
     def setup() {
     }

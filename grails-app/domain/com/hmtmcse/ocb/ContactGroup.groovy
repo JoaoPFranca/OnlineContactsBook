@@ -23,3 +23,4 @@ class ContactGroup {
 }
 
 // Contact e ContactGroup: Many-to-Many
+// ContactGroup belongs to member
