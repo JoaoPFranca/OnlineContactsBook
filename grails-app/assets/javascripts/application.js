@@ -10,7 +10,8 @@
 //= require bootstrap.bundle
 //= require popper.min
 //= require jquery-confirm.min
-// = require ocb
-// = require ocb.init.js
-// = require ocb.message.box
+//= require ocb
+//= require ocb.init
+//= require ocb.message.box
 //= require_self
+//= require ocb.ajax
