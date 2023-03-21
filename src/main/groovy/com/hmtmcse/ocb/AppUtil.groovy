@@ -16,4 +16,8 @@ class AppUtil {
         return [info: message, success: status]
     }
 
+    static String baseURL(){
+        return "${getAppSession().getServletContext().getContextPath()}/"
+    }
+
 }
