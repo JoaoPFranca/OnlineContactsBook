@@ -77,6 +77,7 @@ class ContactService {
             if (!image.equals("")){
                 contact.image = image
                 contact.save(flush:true)
+
             }
         }
     }
